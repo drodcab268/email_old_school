@@ -1,9 +1,11 @@
-zone "sistema.sol" {
-     type master;
-     file "/var/lib/bind/db.sistema.sol";
+// Local zone definitions
+
+zone "asir-drc.test" {
+    type master;
+    file "/etc/bind/db.asir-drc.test";
 };
 
 zone "56.168.192.in-addr.arpa" {
-     type master;
-     file "/var/lib/bind/db.192.168.56";
+    type master;
+    file "/etc/bind/db.192.168.56";
 };

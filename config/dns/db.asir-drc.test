@@ -1,0 +1,18 @@
+; Zona asir-drc.test
+$TTL	86400
+@	IN	SOA	dns.asir-drc.test. root.asir-drc.test. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			  86400 )	; Negative Cache TTL
+;
+@	    IN	NS	dns.asir-drc.test.
+dns     IN	A		192.168.56.100
+mail    IN  A       192.168.56.101
+postfix	IN	A		192.168.56.101
+dovecot	IN	A 		192.168.56.101
+smtp	IN 	CNAME	postfix.asir-drc.test.
+pop		IN	CNAME	postfix.asir-drc.test.
+imap	IN 	CNAME	dovecot.asir-drc.test.
+@		IN 	MX 	10	mail.asir-drc.test.

@@ -19,12 +19,12 @@ Vagrant.configure("2") do |config|
 
     dns.vm.provider "virtualbox" do |vb|
       vb.name = "dns"
-      vb.memory = "256"
+      vb.memory = "512"
     end
 
-    dns.vm.hostname = "dns"    
-    dns.vm.network :private_network, ip: "192.168.56.100", hostname: true
-    dns.vm.provisio "shell", path: "provision/dns.sh"
+    dns.vm.hostname = "dns.asir-drc.local"    
+    dns.vm.network "private_network", ip: "192.168.56.100", hostname: true
+    dns.vm.provision "shell", path: "provision/dns.sh"
   end
 
   ####################################################################
@@ -34,10 +34,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "mail" do |mail|
     mail.vm.provider "virtualbox" do |vb|
       vb.name = "mail"
-      vb.memory = "256"
+      vb.memory = "512"
     end
 
-    mail.vm.hostname = "mail"
-    mail.vm.network :private_network, ip: "192.168.56.101", hostname: true
+    mail.vm.hostname = "mail.asir-drc.local"
+    mail.vm.network "private_network", ip: "192.168.56.101", hostname: true
   end
 end

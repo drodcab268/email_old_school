@@ -1,12 +1,12 @@
 ; BIND reverse data file for local loopback interface
 $TTL	604800
-@	IN	SOA	dns.asir-drc.local. root.asir-drc.local. (
+@	IN	SOA	dns.asir-drc.test. root.asir-drc.test. (
 			      1		; Serial
 			 604800		; Refresh
 			  86400		; Retry
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@		IN		NS	dns.asir-drc.local.
-100		IN		PTR	dns.asir-drc.local.
-101     IN      PTR asir-drc.local.
+@		IN		NS	dns.asir-drc.test.
+100		IN		PTR	dns.asir-drc.test
+101     IN      PTR mail.asir-drc.test
