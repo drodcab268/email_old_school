@@ -13,6 +13,10 @@ apt-get install postfix dovecot-core dovecot-imapd dovecot-pop3d -y
 # --------
 # Postfix config
 # --------
+
+postconf -e "myhostname = mail.asir-drc.test"
+postconf -e "mydomain = asir-drc.test"
+postconf -e "myorigin = /etc/mailname"
 postconf -e "home_mailbox = Maildir/"
 postconf -e "mynetworks = 127.0.0.0/8, 192.168.57.0/24, 10.112.0.0/16"
 
