@@ -8,5 +8,5 @@ $TTL	604800
 			 604800 )	; Negative Cache TTL
 ;
 @		IN		NS	dns.asir-drc.test.
-100		IN		PTR	dns.asir-drc.test
-101     IN      PTR mail.asir-drc.test
+100		IN		PTR	dns.asir-drc.test.
+101     IN      PTR mail.asir-drc.test.
