@@ -39,5 +39,6 @@ Vagrant.configure("2") do |config|
 
     mail.vm.hostname = "mail.asir-drc.local"
     mail.vm.network "private_network", ip: "192.168.56.101", hostname: true
+    mail.vm.provision "shell", path: "provision/mail.sh"
   end
 end
