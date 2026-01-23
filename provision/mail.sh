@@ -13,14 +13,17 @@ apt-get install postfix dovecot-core dovecot-imapd dovecot-pop3d -y
 # --------
 # Postfix config
 # --------
-
-postconf -e "myhostname = mail.asir-drc.test"
-postconf -e "mydomain = asir-drc.test"
-postconf -e "myorigin = /etc/mailname"
 postconf -e "home_mailbox = Maildir/"
 postconf -e "mynetworks = 127.0.0.0/8, 192.168.57.0/24, 10.112.0.0/16"
 
-echo "asir-drc.test" > /etc/mailname
+# Generate SSL certificate for Dovecot
+mkdir -p /etc/ssl/private /etc/ssl/certs
+
+openssl req -x509 -nodes -days 365 \
+ -newkey rsa:2048 \
+ -keyout /etc/ssl/private/dovecot.key \
+ -out /etc/ssl/certs/dovecot.pem \
+ -subj "/C=ES/ST=Granada/L=Granada/O=ASIR/OU=Lab/CN=mail.asir-drc.test"
 
 systemctl restart postfix
 systemctl enable postfix
