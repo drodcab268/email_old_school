@@ -1,4 +1,4 @@
-; Zona asir-drc.test
+
 $TTL	86400
 @	IN	SOA	dns.asir-drc.test. root.asir-drc.test. (
 			      1		; Serial

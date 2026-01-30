@@ -1,4 +1,4 @@
-; BIND reverse data file for local loopback interface
+
 $TTL	604800
 @	IN	SOA	dns.asir-drc.test. root.asir-drc.test. (
 			      1		; Serial

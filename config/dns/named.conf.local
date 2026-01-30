@@ -1,4 +1,3 @@
-// Local zone definitions
 
 zone "asir-drc.test" {
     type master;
